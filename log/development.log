@@ -1,0 +1,2529 @@
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20200323155038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_products_on_name" ON "products" ("name")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200323155038"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-23 15:51:16.581013"], ["updated_at", "2020-03-23 15:51:16.581013"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at 0.0.0.0:9001...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fcb3693b030>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:50051...
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/namtx/.rvm/gems/ruby-2.6.5/bin/rake:23)
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:05:59 +0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1407)
+
+
+  
+NameError (uninitialized constant Demo):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fed60c0bbb0>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:15:51 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1458)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/favicon.ico" for ::1 at 2020-03-30 10:15:52 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:15:52 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1430)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:15:53 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1427)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:15:54 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1429)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:16 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1489)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:18 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1446)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:19 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1439)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:19 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1439)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:19 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:19 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:19 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:20 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:20 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:20 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:20 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:16:20 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fad2ccd2608>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:37 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1489)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:38 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1446)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:39 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1439)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:39 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1439)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:39 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:40 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1437)
+
+
+  
+NameError (uninitialized constant Products):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:53 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1533)
+
+
+  
+NameError (uninitialized constant Rpc::Products::GetProducts
+Did you mean?  Rpc::GetProductsReq
+               Rpc::GetProductResp
+               Rpc::GetProductReq):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:54 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1510)
+
+
+  
+NameError (uninitialized constant Rpc::Products::GetProducts
+Did you mean?  Rpc::GetProductsReq
+               Rpc::GetProductResp
+               Rpc::GetProductReq):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:54 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1510)
+
+
+  
+NameError (uninitialized constant Rpc::Products::GetProducts
+Did you mean?  Rpc::GetProductsReq
+               Rpc::GetProductResp
+               Rpc::GetProductReq):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:54 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1510)
+
+
+  
+NameError (uninitialized constant Rpc::Products::GetProducts
+Did you mean?  Rpc::GetProductsReq
+               Rpc::GetProductResp
+               Rpc::GetProductReq):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:55 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1510)
+
+
+  
+NameError (uninitialized constant Rpc::Products::GetProducts
+Did you mean?  Rpc::GetProductsReq
+               Rpc::GetProductResp
+               Rpc::GetProductReq):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:18:55 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1510)
+
+
+  
+NameError (uninitialized constant Rpc::Products::GetProducts
+Did you mean?  Rpc::GetProductsReq
+               Rpc::GetProductResp
+               Rpc::GetProductReq):
+  
+app/controllers/jobs_controller.rb:8:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:20:53 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 180)
+
+
+  
+NotImplementedError (The method GetJob has not been implemented in this service.):
+  
+app/controllers/jobs_controller.rb:9:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:20:54 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 148)
+
+
+  
+NotImplementedError (The method GetJob has not been implemented in this service.):
+  
+app/controllers/jobs_controller.rb:9:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:11 +0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:11 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a25b83948>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 132ms (ActiveRecord: 0.0ms | Allocations: 245)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:12 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:12 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23e56848>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:13 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:13 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23e752e8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:13 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:13 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23e9dea0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:13 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:13 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23eb4d08>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:14 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:14 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23ed7060>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:14 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:14 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23ef6078>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:14 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:14 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23f15dd8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:14 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:14 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23f377d0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:14 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:14 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23f55c08>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:15 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:15 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23f854a8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:15 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:15 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23fa48d0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:16 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:16 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23fce068>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:18 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:18 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a23fee2f0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:21 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:21 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a25bf6e48>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:21 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:21 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a241ebd78>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:21 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:21 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a29920cd8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:31 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:31 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a241f1b88>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 285)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:32 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:32 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a29932a78>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 213)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:32 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:32 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a241fb980>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:33 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:33 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a249f08c0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 213)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:33 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:33 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a25bed7d0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:33 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:33 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a249f66a8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:33 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:33 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a2993b5b0>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:33 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:33 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a242004f8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:33 +0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:33 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a24a053d8>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 211)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:21:55 +0700
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:21:55 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+app err:#<GRPC::ActiveCall:0x00007f8a2994a240>, status:5:Failed to find Product with ID: 1
+Sending status  5:Failed to find Product with ID: 1
+Failing with status #<struct Struct::Status code=5, details="Failed to find Product with ID: 1", metadata={"error-internal-bin"=>"{\"code\":\"not_found\",\"app_code\":\"product_not_found\",\"message\":\"Failed to find Product with ID: 1\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 216)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (2.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iPhone 11 Pro Max"], ["price", 1100.0], ["created_at", "2020-03-30 03:23:43.199513"], ["updated_at", "2020-03-30 03:23:43.199513"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:24:01 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:24:01 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 204 No Content in 17ms (ActiveRecord: 0.0ms | Allocations: 244)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:24:02 +0700
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:24:02 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:38:53 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:38:53 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 260)
+
+
+  
+TypeError (no implicit conversion of Rpc::GetProductResp into String):
+  
+app/controllers/jobs_controller.rb:11:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:39:42 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:39:42 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 256)
+
+
+  
+TypeError (no implicit conversion of Rpc::Product into String):
+  
+app/controllers/jobs_controller.rb:11:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:39:43 +0700
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:39:43 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 238)
+
+
+  
+TypeError (no implicit conversion of Rpc::Product into String):
+  
+app/controllers/jobs_controller.rb:11:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:39:44 +0700
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:39:44 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 235)
+
+
+  
+TypeError (no implicit conversion of Rpc::Product into String):
+  
+app/controllers/jobs_controller.rb:11:in `show'
+Started GET "/jobs/1" for ::1 at 2020-03-30 10:56:18 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-30 10:56:18 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 500 Internal Server Error in 14998138ms (ActiveRecord: 0.0ms | Allocations: 20781277)
+
+
+  
+TypeError (no implicit conversion of Rpc::Product into String):
+  
+app/controllers/jobs_controller.rb:12:in `show'
+Started GET "/account-settings" for ::1 at 2020-03-30 15:07:38 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/account-settings"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Shutting down...
+stopped: #<GRPC::RpcServer:0x00007f8a23d70a78>
+stopping, will wait for all the workers to exit
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+Starting gruf server at 0.0.0.0:9001...
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:13:03 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms | Allocations: 256)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fe6c43c4468>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:13:39 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:13:39 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.0ms | Allocations: 304)
+
+
+  
+TypeError (no implicit conversion of Rpc::Product into String):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/clients/1" for ::1 at 2020-03-31 15:15:34 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:15:34 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fbd62a23d30>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+Starting gruf server at 0.0.0.0:9001...
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:15:48 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 194)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:15:50 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 1496ms (ActiveRecord: 0.0ms | Allocations: 193)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:15:53 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 463ms (ActiveRecord: 0.0ms | Allocations: 188)
+
+
+Shutting down...
+stopped: #<GRPC::RpcServer:0x00007f8d55f0fd40>
+stopping, will wait for all the workers to exit
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started GET "/clients/1" for ::1 at 2020-03-31 15:17:27 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 12ms (ActiveRecord: 0.0ms | Allocations: 2172)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:17:59 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 256)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:18:01 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 1065ms (ActiveRecord: 0.0ms | Allocations: 194)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f9f9e572340>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+Started GET "/clients/1" for ::1 at 2020-03-31 15:18:55 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:/rpc.Products/GetProduct
+Starting gruf server at http://localhost:9003...
+FATAL ERROR: could not add port http://localhost:9003 to server, not sure why /Users/namtx/.rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/forwardable.rb:230:in `add_http2_port'
+/Users/namtx/.rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/forwardable.rb:230:in `add_http2_port'
+/Users/namtx/.rvm/gems/ruby-2.6.5/gems/gruf-2.8.1/lib/gruf/server.rb:77:in `block in server'
+/Users/namtx/.rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+/Users/namtx/.rvm/gems/ruby-2.6.5/gems/gruf-2.8.1/lib/gruf/server.rb:57:in `server'
+/Users/namtx/.rvm/gems/ruby-2.6.5/gems/gruf-2.8.1/lib/gruf/server.rb:106:in `start!'
+/Users/namtx/.rvm/gems/ruby-2.6.5/gems/gruf-2.8.1/lib/gruf/cli/executor.rb:52:in `run'
+/Users/namtx/.rvm/gems/ruby-2.6.5/gems/gruf-2.8.1/bin/gruf:29:in `<top (required)>'
+/Users/namtx/.rvm/gems/ruby-2.6.5/bin/gruf:23:in `load'
+/Users/namtx/.rvm/gems/ruby-2.6.5/bin/gruf:23:in `<main>'
+/Users/namtx/.rvm/gems/ruby-2.6.5/bin/ruby_executable_hooks:24:in `eval'
+/Users/namtx/.rvm/gems/ruby-2.6.5/bin/ruby_executable_hooks:24:in `<main>'
+Failing with status #<struct Struct::Status code=14, details="failed to connect to all addresses", metadata={}>
+Completed 204 No Content in 22273ms (ActiveRecord: 0.0ms | Allocations: 257)
+
+
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started GET "/clients/1" for ::1 at 2020-03-31 15:19:58 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 13ms (ActiveRecord: 0.0ms | Allocations: 2181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:01 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:02 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1184)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:03 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:04 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f92ec1c6bd8>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:30 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:33 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:20:40 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fdf95b27d30>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:02 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms | Allocations: 2172)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:04 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1213)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:05 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1184)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:06 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1193)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:07 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1187)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:07 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1185)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:08 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:09 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1187)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:23 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1188)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fbadac93c80>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started GET "/clients/1" for ::1 at 2020-03-31 15:21:51 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms | Allocations: 2181)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007ff98f57ee60>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:22:53 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms | Allocations: 2172)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:00 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f96dbf07d18>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:21 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms | Allocations: 2181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:22 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:23 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1184)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:24 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:25 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:23:25 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:3000:/rpc.Products/GetProduct
+Failing with status #<struct Struct::Status code=14, details="Trying to connect an http1.x server", metadata={}>
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1181)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fee35213d30>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started GET "/clients/1" for ::1 at 2020-03-31 15:24:23 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:24:23 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 108ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:24:24 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:24:24 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f914eaecb58>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fcf02c07c80>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Shutting down...
+stopped: #<GRPC::RpcServer:0x00007fea31c54ab8>
+stopping, will wait for all the workers to exit
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients/1" for ::1 at 2020-03-31 15:26:15 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:26:15 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 108ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:26:16 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:26:16 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:26:18 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:26:18 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:26:19 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:26:19 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:26:20 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:26:20 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Started GET "/clients/1" for ::1 at 2020-03-31 15:26:20 +0700
+Processing by ClientsController#show as */*
+  Parameters: {"id"=>"1"}
+calling localhost:9003:/rpc.Products/GetProduct
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:26:20 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/rpc/products_controller.rb:14:in `get_product'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 257)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f921980bd50>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients" for ::1 at 2020-03-31 15:35:56 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ClientsController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/clients" for ::1 at 2020-03-31 15:36:11 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 208)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/clients_controller.rb:29:in `create_params'
+app/controllers/clients_controller.rb:21:in `create'
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fea66ca5848>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started POST "/clients" for ::1 at 2020-03-31 15:37:36 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:37:36 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  
+Gruf::Client::Errors::Internal (Gruf::Client::Errors::Internal):
+  
+app/controllers/clients_controller.rb:21:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007fad610b6678>, status:13:undefined method `create_products' for #<ProductsController:0x00007fad610b61f0>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007fad610b61f0>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fad610d3d40>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started POST "/clients" for ::1 at 2020-03-31 15:38:30 +0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:38:48 +0700)
+schedule another job
+Completed 500 Internal Server Error in 17824ms (ActiveRecord: 0.0ms | Allocations: 30520)
+
+
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  
+Gruf::Client::Errors::Internal (Gruf::Client::Errors::Internal):
+  
+app/controllers/clients_controller.rb:22:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007fc9e3a2e568>, status:13:undefined method `create_products' for #<ProductsController:0x00007fc9e3a2e108>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007fc9e3a2e108>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Started POST "/clients" for ::1 at 2020-03-31 15:39:12 +0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:39:16 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007fc9e3a9ce78>, status:13:undefined method `create_products' for #<ProductsController:0x00007fc9e3a9ca68>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007fc9e3a9ca68>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 500 Internal Server Error in 12899ms (ActiveRecord: 0.0ms | Allocations: 56782)
+
+
+  
+Gruf::Client::Errors::Internal (Gruf::Client::Errors::Internal):
+  
+app/controllers/clients_controller.rb:22:in `create'
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fc9e61d0f30>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started POST "/clients" for ::1 at 2020-03-31 15:40:18 +0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:40:18 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 414)
+
+
+  
+Gruf::Client::Errors::Internal (Gruf::Client::Errors::Internal):
+  
+app/controllers/clients_controller.rb:21:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007f9fcb4c66d0>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcb4c6270>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcb4c6270>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Started POST "/clients" for ::1 at 2020-03-31 15:40:55 +0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:40:55 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+Completed 204 No Content in 9ms (ActiveRecord: 0.0ms | Allocations: 1368)
+
+
+app err:#<GRPC::ActiveCall:0x00007f9fcb5138e0>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcb5134d0>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcb5134d0>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Started POST "/clients" for ::1 at 2020-03-31 15:43:12 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:12 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcd0c0188>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcd0d3d28>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcd0d3d28>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 27ms (ActiveRecord: 0.6ms | Allocations: 6980)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:19 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:19 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcac07c10>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcac077d8>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcac077d8>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 15ms (ActiveRecord: 0.0ms | Allocations: 3068)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:21 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:21 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcc27bc80>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcc27b820>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcc27b820>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 12ms (ActiveRecord: 0.0ms | Allocations: 3068)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:22 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:22 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcc256d18>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcc256890>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcc256890>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 9ms (ActiveRecord: 0.0ms | Allocations: 3068)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:22 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:22 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcc29c4f8>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcc29c0e8>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcc29c0e8>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 36ms (ActiveRecord: 0.0ms | Allocations: 3070)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:22 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:22 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcb4f5ca0>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcb4f5890>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcb4f5890>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:23 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:23 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcb522ca0>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcb522840>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcb522840>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 9ms (ActiveRecord: 0.0ms | Allocations: 3061)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:23 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:23 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcc2d7b98>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcc2d7788>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcc2d7788>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 9ms (ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:43:24 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:43:24 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcd935ae8>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcb18bfb0>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcb18bfb0>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 14ms (ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:44:07 +0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:44:07 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007f9fcb34e460>, status:13:undefined method `create_products' for #<ProductsController:0x00007f9fcb34d8f8>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007f9fcb34d8f8>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 50632ms (ActiveRecord: 0.7ms | Allocations: 83934)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f9fcb4d3c18>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started POST "/clients" for ::1 at 2020-03-31 15:46:34 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:46:34 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007fe69a586000>, status:13:undefined method `create_products' for #<ProductsController:0x00007fe69a5856f0>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007fe69a5856f0>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 81894ms (ActiveRecord: 0.6ms | Allocations: 2879965)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fe69a4decb0>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started POST "/clients" for ::1 at 2020-03-31 15:48:13 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:48:13 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007ff716432668>, status:13:undefined method `create_products' for #<ProductsController:0x00007ff7164321e0>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007ff7164321e0>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 317558ms (ActiveRecord: 0.6ms | Allocations: 2097044)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:53:41 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:53:41 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007ff716478aa0>, status:13:undefined method `create_products' for #<ProductsController:0x00007ff716478690>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007ff716478690>
+Did you mean?  create_product
+Error in worker thread
+call#run_batch failed somehow
+Completed 204 No Content in 237815ms (ActiveRecord: 0.5ms | Allocations: 1203156)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:57:49 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:57:49 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+app err:#<GRPC::ActiveCall:0x00007ff714cbe158>, status:13:undefined method `create_products' for #<ProductsController:0x00007ff714cbdd48>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007ff714cbdd48>
+Did you mean?  create_product
+Failing with status #<struct Struct::Status code=13, details="undefined method `create_products' for #<ProductsController:0x00007ff714cbdd48>\nDid you mean?  create_product", metadata={"error-internal-bin"=>"{\"code\":\"internal\",\"app_code\":\"unknown\",\"message\":\"undefined method `create_products' for #\\u003cProductsController:0x00007ff714cbdd48\\u003e\\nDid you mean?  create_product\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 44908ms (ActiveRecord: 0.0ms | Allocations: 371216)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 15:58:38 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 261)
+
+
+  
+NotImplementedError (The method CreateProduct has not been implemented in this service.):
+  
+app/controllers/clients_controller.rb:22:in `create'
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007ff71439bd50>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started POST "/clients" for ::1 at 2020-03-31 15:59:30 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 15:59:30 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+app err:#<GRPC::ActiveCall:0x00007fdc721c2658>, status:13:undefined method `create_products' for #<ProductsController:0x00007fdc721c21a8>
+Did you mean?  create_product
+Sending status  13:undefined method `create_products' for #<ProductsController:0x00007fdc721c21a8>
+Did you mean?  create_product
+Failing with status #<struct Struct::Status code=13, details="undefined method `create_products' for #<ProductsController:0x00007fdc721c21a8>\nDid you mean?  create_product", metadata={"error-internal-bin"=>"{\"code\":\"internal\",\"app_code\":\"unknown\",\"message\":\"undefined method `create_products' for #\\u003cProductsController:0x00007fdc721c21a8\\u003e\\nDid you mean?  create_product\",\"field_errors\":[],\"debug_info\":{}}"}>
+Completed 204 No Content in 74ms (ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fdc721cbd48>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started POST "/clients" for ::1 at 2020-03-31 16:00:21 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:00:21 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+found nil; the final response has been sent
+Completed 204 No Content in 116ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fc817d64908>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started POST "/clients" for ::1 at 2020-03-31 16:02:27 +0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:02:27 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:02:28.092638"], ["updated_at", "2020-03-31 09:02:28.092638"]]
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 117ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:02:32 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:02:32 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:02:32.420242"], ["updated_at", "2020-03-31 09:02:32.420242"]]
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:02:34 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:02:34 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:02:34.675016"], ["updated_at", "2020-03-31 09:02:34.675016"]]
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:43:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 10ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fbf60d33ed0>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started POST "/clients" for ::1 at 2020-03-31 16:03:01 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:01 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:01.550867"], ["updated_at", "2020-03-31 09:03:01.550867"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 142ms (ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:03:06 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:06 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:06.383923"], ["updated_at", "2020-03-31 09:03:06.383923"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:03:07 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:07 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:07.438711"], ["updated_at", "2020-03-31 09:03:07.438711"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:03:08 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:08 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:08.118361"], ["updated_at", "2020-03-31 09:03:08.118361"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:03:08 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:08 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:08.789220"], ["updated_at", "2020-03-31 09:03:08.789220"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 272)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:03:09 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:09 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:09.430611"], ["updated_at", "2020-03-31 09:03:09.430611"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 269)
+
+
+Started POST "/clients" for ::1 at 2020-03-31 16:03:10 +0700
+Processing by ClientsController#create as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/CreateProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:03:10 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "S10 Plus"], ["price", 11110.0], ["created_at", "2020-03-31 09:03:10.062498"], ["updated_at", "2020-03-31 09:03:10.062498"]]
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/rpc/products_controller.rb:42:in `block in create_products'
+found nil; the final response has been sent
+Completed 204 No Content in 5ms (ActiveRecord: 0.0ms | Allocations: 270)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007f98b4635318>
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+Starting gruf server at localhost:9003...
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Started GET "/clients" for ::1 at 2020-03-31 16:08:34 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#index as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/GetProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:08:34 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 922)
+
+
+  
+NoMethodError (undefined method `products' for #<Enumerator:0x00007fca7e52fc38>):
+  
+app/controllers/clients_controller.rb:10:in `index'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/rpc/products_controller.rb:34:in `map'
+sending <Rpc::Product: id: 1, name: "iPhone 11 Pro Max", price: 1100.0>, marshalled? false
+sending <Rpc::Product: id: 2, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 3, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 4, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 5, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 6, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 7, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 8, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 9, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 10, name: "S10 Plus", price: 11110.0>, marshalled? false
+Sending status  0:OK
+Started GET "/clients" for ::1 at 2020-03-31 16:09:08 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#index as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/GetProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:09:08 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/rpc/products_controller.rb:34:in `map'
+sending <Rpc::Product: id: 1, name: "iPhone 11 Pro Max", price: 1100.0>, marshalled? false
+sending <Rpc::Product: id: 2, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 3, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 4, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 5, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 6, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 7, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 8, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 9, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 10, name: "S10 Plus", price: 11110.0>, marshalled? false
+Sending status  0:OK
+Completed 500 Internal Server Error in 12661ms (ActiveRecord: 0.0ms | Allocations: 26477)
+
+
+  
+NoMethodError (undefined method `products' for #<Enumerator:0x00007f9a9c3b7638>):
+  
+app/controllers/clients_controller.rb:11:in `index'
+Started GET "/clients" for ::1 at 2020-03-31 16:13:49 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#index as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/GetProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:13:49 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/rpc/products_controller.rb:34:in `map'
+sending <Rpc::Product: id: 1, name: "iPhone 11 Pro Max", price: 1100.0>, marshalled? false
+sending <Rpc::Product: id: 2, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 3, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 4, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 5, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 6, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 7, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 8, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 9, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 10, name: "S10 Plus", price: 11110.0>, marshalled? false
+Sending status  0:OK
+found nil; the final response has been sent
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Shutting down...
+stopped: #<GRPC::RpcServer:0x00007f82dfc33d18>
+stopping, will wait for all the workers to exit
+stopped, all workers are shutdown
+Goodbye!
+- Loading gRPC service file: /Users/namtx/workspace/gruf_playground/gruf-demo/app/rpc/products_controller.rb
+handling /rpc.Products/GetProduct with #<Method: Rpc::Products::Service#get_product>
+handling /rpc.Products/GetProducts with #<Method: Rpc::Products::Service#get_products>
+handling /rpc.Products/CreateProducts with #<Method: Rpc::Products::Service#create_products>
+handling /rpc.Products/CreateProductsInStream with #<Method: Rpc::Products::Service#create_products_in_stream>
+Starting gruf server at localhost:9003...
+Started GET "/clients" for ::1 at 2020-03-31 16:17:08 +0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientsController#index as */*
+  Parameters: {"name"=>"S10 Plus", "price"=>11110, "client"=>{"name"=>"S10 Plus", "price"=>11110}}
+calling localhost:9003:/rpc.Products/GetProducts
+deadline is 1970-01-01 07:59:59 +0800; (now=2020-03-31 16:17:08 +0700)
+schedule another job
+Intercepting request with interceptor: Gruf::Interceptors::Instrumentation::OutputMetadataTimer
+Intercepting request with interceptor: Gruf::Interceptors::ActiveRecord::ConnectionReset
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/rpc/products_controller.rb:34:in `map'
+sending <Rpc::Product: id: 1, name: "iPhone 11 Pro Max", price: 1100.0>, marshalled? false
+sending <Rpc::Product: id: 2, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 3, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 4, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 5, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 6, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 7, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 8, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 9, name: "S10 Plus", price: 11110.0>, marshalled? false
+sending <Rpc::Product: id: 10, name: "S10 Plus", price: 11110.0>, marshalled? false
+Sending status  0:OK
+found nil; the final response has been sent
+Completed 204 No Content in 74ms (ActiveRecord: 0.0ms | Allocations: 391)
+
+
+Shutting down...
+stopping, will wait for all the workers to exit
+stopped: #<GRPC::RpcServer:0x00007fec4fc985e0>
+stopped, all workers are shutdown
+Goodbye!

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package rpc;
+
+service Products {
+  rpc GetProduct(GetProductReq) returns (GetProductResp) {}
+  rpc GetProducts(GetProductsReq) returns (stream Product) {}
+  rpc CreateProducts(stream Product) returns (CreateProductsResp) {}
+  rpc CreateProductsInStream(stream Product) returns (stream Product) {}
+}
+
+message Product {
+  uint32 id = 1;
+  string name = 2;
+  float price = 3;
+}
+
+message GetProductReq {
+  uint32 id = 1;
+}
+
+message GetProductResp {
+  Product product = 1;
+}
+
+message GetProductsReq {
+  string search = 1;
+  uint32 limit = 2;
+}
+
+
+
+message CreateProductsResp {
+  repeated Product products = 1;
+}

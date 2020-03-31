@@ -1,0 +1,2 @@
+gruf_server: bundle exec gruf --host=localhost:9003
+client_server: rails s -p 3000
